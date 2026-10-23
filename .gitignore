@@ -1,0 +1,6 @@
+dist/
+.build/
+*.user
+.DS_Store
+Thumbs.db
+userdata.*
