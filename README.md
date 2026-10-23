@@ -1,4 +1,4 @@
-# 轻打 / Quiet Type
+# 轻打 / Quiet Type · Typing practice
 
 [中文](#中文) · [English](#english)
 
@@ -6,7 +6,7 @@
 
 ## 中文
 
-一个离线打字练习工具
+适用于 Windows 和 macOS 的离线打字练习与打字测速工具，支持中文、英文和自定义语言
 
 浅灰色原文留在白色输入区里，输入的黑字在同一位置盖上去，哪里打错、还剩多少，一眼就能看到
 
@@ -71,6 +71,10 @@ Windows 用 Ctrl，macOS 用 Command：R 重来、N 下一篇，Backspace 修改
 - Windows：`%LOCALAPPDATA%\QuietType\userdata.xml`
 - macOS：`~/Library/Application Support/QuietType/userdata.json`
 
+### 反馈问题
+
+安装、输入法或练习过程中遇到问题，可以[提交 Issue](https://github.com/wind884/quiet-type/issues/new)，写上系统、操作步骤和实际结果，方便复现
+
 ### 从源码构建
 
 Windows 在 PowerShell 运行：
@@ -93,7 +97,7 @@ sh macos/test.sh
 
 ## English
 
-An offline typing practice app
+Offline typing practice and typing tests for Windows and macOS, with Chinese, English, and custom languages
 
 The passage appears in light gray on a white typing area. As you type, black characters cover the original text in the same positions, so you can see your mistakes and how much is left.
 
@@ -157,6 +161,10 @@ No account is needed. Your texts, results, and mistake lists stay on your comput
 
 - Windows: `%LOCALAPPDATA%\QuietType\userdata.xml`
 - macOS: `~/Library/Application Support/QuietType/userdata.json`
+
+### Questions and feedback
+
+If installation, an input method, or a practice session goes wrong, [open an issue](https://github.com/wind884/quiet-type/issues/new) with your operating system, the steps you took, and what happened.
 
 ### Building from source
 
