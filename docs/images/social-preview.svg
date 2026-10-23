@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640">
+  <rect width="1280" height="640" fill="#f7f7f5"/>
+  <g font-family="Segoe UI, Microsoft YaHei, Arial, sans-serif">
+    <text x="60" y="106" font-size="58" font-weight="600" fill="#222425">Quiet Type</text>
+    <text x="392" y="103" font-size="38" fill="#454849">轻打</text>
+    <text x="1220" y="84" text-anchor="end" font-size="19" fill="#696e70">Windows / macOS</text>
+    <text x="62" y="159" font-size="25" fill="#696e70">Offline typing practice &amp; typing tests</text>
+    <rect x="60" y="208" width="1160" height="270" fill="#fff" stroke="#dedfdd"/>
+    <text x="92" y="250" font-size="17" fill="#85898a">English</text>
+    <g font-family="Consolas, Courier New, monospace" font-size="24">
+      <text x="92" y="313"><tspan fill="#222425">The rain began while I was choosing apples.</tspan><tspan fill="#c5c8c9">&#160;By the time</tspan></text>
+      <text x="92" y="360" fill="#c5c8c9">I reached the shop door, the pavement had become</text>
+      <text x="92" y="407" fill="#c5c8c9">a shallow stream.</text>
+    </g>
+    <path d="M60 478H306" stroke="#64767d" stroke-width="3"/>
+    <text x="62" y="542" font-size="24" fill="#454849">中文 · English · Custom languages</text>
+    <text x="62" y="582" font-size="19" fill="#747a7c">201 lessons · Exam writing · Code · Challenges</text>
+    <text x="1220" y="549" text-anchor="end" font-size="18" fill="#696e70">wind884/quiet-type</text>
+    <text x="1220" y="582" text-anchor="end" font-size="13" fill="#a9adae">GraysonC</text>
+  </g>
+</svg>
