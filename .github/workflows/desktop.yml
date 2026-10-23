@@ -1,0 +1,85 @@
+name: Desktop
+on:
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: Publish desktop downloads after checks pass
+        type: boolean
+        default: true
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Check Windows
+        shell: pwsh
+        run: ./windows/test.ps1
+      - name: Build Windows
+        shell: pwsh
+        run: |
+          ./windows/build.ps1
+          Copy-Item -LiteralPath 'dist/轻打.exe' -Destination 'dist/QuietType.exe'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: windows
+          path: dist/QuietType.exe
+          if-no-files-found: error
+  macos:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - runner: macos-15
+            artifact: macos
+          - runner: macos-15-intel
+            artifact: macos-intel
+    runs-on: ${{ matrix.runner }}
+    steps:
+      - uses: actions/checkout@v7
+      - name: Build macOS
+        run: sh macos/build.sh
+      - name: Check macOS
+        run: sh macos/test.sh
+      - name: Capture window
+        run: '"dist/Quiet Type.app/Contents/MacOS/QuietType" --screenshot "$PWD/.build/macos-window.png"'
+      - name: Package macOS
+        run: sh macos/package.sh
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.artifact }}
+          path: |
+            dist/QuietType.dmg
+            dist/QuietType-macOS.zip
+            .build/macos-window.png
+          include-hidden-files: true
+          if-no-files-found: error
+  release:
+    if: github.event_name == 'workflow_dispatch' && inputs.publish
+    needs: [windows, macos]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/download-artifact@v4
+        with:
+          name: windows
+          path: release
+      - uses: actions/download-artifact@v4
+        with:
+          name: macos
+          path: release-macos
+      - name: Publish downloads
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cp release-macos/dist/QuietType.dmg release-macos/dist/QuietType-macOS.zip release/
+          cd release
+          sha256sum QuietType.exe QuietType.dmg QuietType-macOS.zip > SHA256SUMS.txt
+          cd ..
+          tag="desktop-${GITHUB_SHA:0:8}"
+          gh release create "$tag" release/QuietType.exe release/QuietType.dmg release/QuietType-macOS.zip release/SHA256SUMS.txt \
+            --target "$GITHUB_SHA" --title '轻打 / Quiet Type' --notes-file .github/release-notes.md --latest
