@@ -21,5 +21,5 @@ done
 iconutil -c icns "$BUILD/AppIcon.iconset" -o "$APP/Contents/Resources/AppIcon.icns"
 codesign --force --deep --sign - "$APP"
 codesign --verify --deep --strict "$APP"
-lipo -verify_arch arm64 x86_64 "$APP/Contents/MacOS/QuietType"
+lipo "$APP/Contents/MacOS/QuietType" -verify_arch arm64 x86_64
 printf '%s\n' "$APP"
