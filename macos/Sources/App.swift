@@ -15,7 +15,7 @@ enum QuietTypeApp {
     }
 }
 
-final class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate, NSTableViewDataSource, NSTableViewDelegate, NSTextFieldDelegate {
+final class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate, NSTableViewDataSource, NSTableViewDelegate, NSSearchFieldDelegate {
     private let store: UserStore
     private var catalog: [Lesson] = []
     private var displayed: [Lesson] = []
