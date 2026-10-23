@@ -112,7 +112,7 @@ final class LibraryWindow: NSWindowController, NSWindowDelegate, NSTableViewData
         contentLabel.frame = NSRect(x: right, y: 150, width: editorWidth, height: 20)
         editorScroll.frame = NSRect(x: right, y: 177, width: editorWidth, height: height - 296)
         editor.minSize = NSSize(width: editorWidth - 18, height: editorScroll.contentSize.height)
-        editor.maxSize = NSSize(width: .greatestFiniteMagnitude, height: .greatestFiniteMagnitude)
+        editor.maxSize = NSSize(width: CGFloat.greatestFiniteMagnitude, height: CGFloat.greatestFiniteMagnitude)
         editor.setFrameSize(NSSize(width: editorScroll.contentSize.width, height: max(editor.frame.height, editorScroll.contentSize.height)))
         count.frame = NSRect(x: right, y: height - 112, width: editorWidth, height: 18); count.alignment = .right
         status.frame = NSRect(x: 20, y: height - 79, width: width - 40, height: 20)
