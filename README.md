@@ -4,9 +4,11 @@
 
 [Windows · exe](https://github.com/wind884/quiet-type/releases/latest/download/QuietType.exe) · [macOS · dmg](https://github.com/wind884/quiet-type/releases/latest/download/QuietType.dmg) · [全部下载 / All downloads](https://github.com/wind884/quiet-type/releases/latest)
 
+[iPad · 打开使用 / Open app](https://quiet-type-ipad.windgrayson.chatgpt.site) · [iPad 源码包 / Source package](QuietType-iPad-source.zip)
+
 ## 中文
 
-适用于 Windows 和 macOS 的离线打字练习与打字测速工具，支持中文、英文和自定义语言
+适用于 Windows、macOS 和 iPad 的离线打字练习与打字测速工具，支持中文、英文和自定义语言
 
 浅灰色原文留在白色输入区里，输入的黑字在同一位置盖上去，哪里打错、还剩多少，一眼就能看到
 
@@ -47,6 +49,10 @@
 | 错字复仇 | 从自己的错词里出题，改对后移出清单，中英文分别练 |
 
 ### 开始使用
+
+iPad 在 Safari 打开上方链接，点共享，选择「添加到主屏幕」，不需要苹果开发者账号；添加后从主屏幕联网打开一次，等底部显示「可离线使用」后就能断网练习，文章、成绩和错词保存在平板本机，可在「成绩」中导出备份
+
+iPad 版保留 201 组短长练习、中英界面和五种挑战，支持屏幕键盘与外接键盘，横屏显示文章列表，竖屏从「选文章」打开
 
 Windows 下载 exe 后直接打开，不需要安装
 
@@ -138,6 +144,10 @@ All five challenges have Chinese and English passages with several scenarios to 
 | Mistake rematch | Practice words from your own mistakes and clear them from the list by getting them right, with separate lists for Chinese and English |
 
 ### Getting started
+
+On iPad, open the app link above in Safari, tap Share, and choose Add to Home Screen. No Apple developer account is needed. Open the app from your Home Screen while online and wait for Ready offline before disconnecting. Your texts, results, and mistakes stay on the iPad, with backups available in History.
+
+The iPad edition includes all 201 short and long lesson pairs, the Chinese/English interface, and five challenges. Use the onscreen or external keyboard. The library stays visible in landscape and opens with Choose text in portrait.
 
 On Windows, download and open the exe. No installation is needed.
 
